@@ -25,7 +25,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-gem "rails_event_store"
+gem 'rails_event_store', '~> 0.35.0'
+gem 'arkency-command_bus', '~> 0.4.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
