@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'rails_event_store', '~> 0.35.0'
 gem 'arkency-command_bus', '~> 0.4.0'
+gem "dry-validation", "~> 0.12.0"
+gem "gate", "~> 0.10.0"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -34,6 +36,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-rails'
 end
 
 group :development do
