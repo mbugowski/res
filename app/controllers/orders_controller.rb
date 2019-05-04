@@ -18,5 +18,13 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @product = Product.find(@order.product_id).name
+    @invoice = Invoice.find_by(order_uid: @order.uid)
+    @delivery = Delivery.find_by(order_uid: @order.uid)
+  end
+
+  def pay
+    order = Order.find(params[:id])
+    execute(Command::PayForOrder.new(order_uid: order.uid))
+    redirect_to order_path(order)
   end
 end

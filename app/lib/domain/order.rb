@@ -3,6 +3,8 @@ module Domain
     include AggregateRoot
 
     CREATED = :created
+    PAID = :paid
+    SENT = :sent
 
     def initialize(id)
       @id = id
@@ -13,11 +15,33 @@ module Domain
       apply Event::OrderCreated.new(data: event_data)
     end
 
+    def pay
+      event_data = { order_uid: @id, status: "paid" }
+
+      apply Event::OrderPaid.new(data: event_data)
+    end
+
+    def send
+      event_data = { order_uid: @id }
+
+      apply Event::OrderSent.new(data: event_data)
+    end
+
     on Event::OrderCreated do |event|
       @order_uid = event.data[:order_uid]
       @product_id = event.data[:product_id]
       @customer_id = event.data[:customer_id]
       @status = CREATED
+    end
+
+    on Event::OrderPaid do |event|
+      @order_uid = event.data[:order_uid]
+      @status = PAID
+    end
+
+    on Event::OrderSent do |event|
+      @order_uid = event.data[:order_uid]
+      @status = SENT
     end
   end
 end
