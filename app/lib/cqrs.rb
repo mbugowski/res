@@ -17,8 +17,10 @@ class Cqrs
   attr_reader :event_store, :command_bus
 
   def subscribe_to_events
+    subscribe(Denormalizer::OrderCreated.new, to: [Event::OrderCreated])
   end
 
   def register_commands
+    register(Command::CreateOrder, CommandHandler::CreateOrder.new)
   end
 end

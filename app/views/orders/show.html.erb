@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+<h1>Order: <%= @order.uid %></h1>
+<p>
+Customer: <%= @order.customer %><br/>
+Status: <%= @order.status %><br />
+Product: <%= @product %>
+</p>
+
+<br/>
+<%= link_to 'Back', orders_path, class: "btn btn-default" %>
