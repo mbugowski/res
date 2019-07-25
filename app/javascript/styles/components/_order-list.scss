@@ -1,0 +1,45 @@
+.order-list {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.order-list__item {
+  display: flex;
+  justify-content: space-evenly;
+  border-top: 1px solid gray;
+}
+
+.order-list__item:first-child {
+  border-top: none;
+}
+
+.order-list__action {
+  padding: 1rem;
+}
+
+.order-list__link {
+  position: relative;
+  top: 50%;
+}
+
+.order-list__title {
+  text-transform: capitalize;
+}
+
+.filtering-orders {
+  display: flex;
+  padding: .5rem;
+}
+
+.filtering-orders__label {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1rem;
+  text-transform: capitalize;
+}
+
+.filtering-orders__select {
+  flex-grow: 1;
+  padding: 1rem;
+}
