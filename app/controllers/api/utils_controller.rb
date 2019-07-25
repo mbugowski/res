@@ -6,6 +6,7 @@ module Api
       product_customer_options = { products: products, customers: customers }
       render json: product_customer_options
     end
+
     private
 
     def to_id_name_h(collection)
