@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default (props) => {
+const OrderSelect = (props) => {
   const { title, handle, options, selected } = props;
   return (
     <label>
@@ -17,3 +17,5 @@ export default (props) => {
     </label>
   );
 }
+
+export default OrderSelect;
