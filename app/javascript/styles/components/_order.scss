@@ -1,0 +1,20 @@
+.order {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-page {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-actions__button {
+  font-size: 2rem;
+  background: green;
+  color: white;
+  border: 0;
+}
+
+.order-actions__button:disabled {
+  background: grey;
+}
